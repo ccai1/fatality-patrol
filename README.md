@@ -13,6 +13,10 @@ Return a boolean for the statement: "the maze is navigable, having a legal trave
 
 When asked to navigate a path, the recursive abstraction can navigate a path from its last turn. If there is a dead end, call on the recursive abstraction again.
 
+## base case
+
+You are one move away from the treasure.
+
 ## algorithm psuedocode -1
 
 start at designated startpoint
@@ -42,4 +46,11 @@ start at designated startpoint
     
       backtrack to the last cell that has an unvisited adjacent cell
       
-end when no cells have an unvisited adjacent cell
+end when no cells have an unvisited adjacent cell and treasure has not yet been reached (no solution)
+
+## class(es), with fields and methods
+
+
+## version*n* wish list
+
+
