@@ -3,7 +3,7 @@ holmes apcs period 05
 
 ## personnel
 
-cathy cai and jeffrey roosovskee
+Cathy Cai & Jeffrey Rusovskiy
 
 ## statement of problem
 
