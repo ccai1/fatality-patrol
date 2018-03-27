@@ -1,5 +1,6 @@
 # maze-project
 holmes apcs period 05
+cathy cai and jeffrey roosovskie
 
 ## statement of problem
 
