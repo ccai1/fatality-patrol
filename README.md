@@ -16,18 +16,30 @@ When asked to navigate a path, the recursive abstraction can navigate a path fro
 ## algorithm psuedocode -1
 
 start at designated startpoint
+
   iterate through maze
+  
 end at designated endpoint
+
 
 ## algorithm psuedocode 0
 
 start at designated startpoint
+
   for all paths
+  
     randomly choose a direction for an adjacent cell
+    
     if adjacent cell has not yet been visited
+    
       embark on the adjacent cell
+      
     else
+    
       choose another direction
+      
     but if all adjacent cells has been visited
+    
       backtrack to the last cell that has an unvisited adjacent cell
+      
 end when no cells have an unvisited adjacent cell
