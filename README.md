@@ -1,7 +1,7 @@
 # maze-project
 holmes apcs period 05
 
-##personnel
+## personnel
 
 cathy cai and jeffrey roosovskee
 
