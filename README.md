@@ -1,4 +1,4 @@
-# maze-project
+# maze project
 holmes apcs period 05
 
 ## personnel
