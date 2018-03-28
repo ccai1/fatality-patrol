@@ -19,11 +19,11 @@ You are one move away from the treasure.
 
 ## algorithm psuedocodes
 
-#### algorithm psuedocode -1
+#### algorithm psuedocode 2 a.m. version
 
     find the treasure
 
-#### algorithm psuedocode -0.5
+#### algorithm psuedocode -1
 
     begin at designated startpoint
 
