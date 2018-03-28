@@ -7,7 +7,9 @@ cathy cai & jeffrey rusovskiy
 
 ## statement of problem
 
-Return a boolean for the statement: "The maze is navigable, having a legal and continuous travel path that traverses from any start start to any treasure."
+Return a boolean for the statement: "The maze is navigable, having a legal travel path that traverses from any start start to any treasure."
+
+A *legal* path has no breaks and does not pass through any walls of the maze.
 
 ## recursive abstraction
 
