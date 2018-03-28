@@ -17,11 +17,13 @@ When asked to navigate a path, the recursive abstraction can navigate a path fro
 
 You are one move away from the treasure.
 
-## algorithm psuedocode -1
+## algorithm psuedocodes
+
+### algorithm psuedocode -1
 
     find the treasure
 
-## algorithm psuedocode -0.5
+### algorithm psuedocode -0.5
 
     begin at designated startpoint
 
@@ -29,7 +31,7 @@ You are one move away from the treasure.
   
     end at designated endpoint
 
-## algorithm psuedocode 0
+### algorithm psuedocode 0
 
     begin at designated startpoint
 
