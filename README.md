@@ -3,7 +3,7 @@ holmes apcs period 05
 
 ## personnel
 
-cathy cai & jeffrey roosovskee
+cathy cai & jeffrey rusovskiy
 
 ## statement of problem
 
@@ -19,34 +19,34 @@ You are one move away from the treasure.
 
 ## algorithm psuedocode -1
 
-start at designated startpoint
+    start at designated startpoint
 
-  iterate through maze
+      iterate through maze
   
-end at designated endpoint
+    end at designated endpoint
 
 
 ## algorithm psuedocode 0
 
-start at designated startpoint
+    start at designated startpoint
 
-  for all paths
+      for all paths
   
-    randomly choose a direction for an adjacent cell
+        randomly choose a direction for an adjacent cell
     
-    if adjacent cell has not yet been visited
+        if adjacent cell has not yet been visited
     
-      embark on the adjacent cell
+          embark on the adjacent cell
       
-    else
+        else
     
-      choose another direction
+          choose another direction
       
-    but if all adjacent cells has been visited
+        but if all adjacent cells has been visited
     
-      backtrack to the last cell that has an unvisited adjacent cell
+          backtrack to the last cell that has an unvisited adjacent cell
       
-end when no cells have an unvisited adjacent cell and treasure has not yet been reached (no solution)
+    end when no cells have an unvisited adjacent cell and treasure has not yet been reached (no solution)
 
 ## class(es), with fields and methods
 
