@@ -19,7 +19,11 @@ You are one move away from the treasure.
 
 ## algorithm psuedocode -1
 
-    start at designated startpoint
+    find the treasure
+
+## algorithm psuedocode -0.5
+
+    begin at designated startpoint
 
       iterate through maze
   
@@ -27,21 +31,21 @@ You are one move away from the treasure.
 
 ## algorithm psuedocode 0
 
-    start at designated startpoint
+    begin at designated startpoint
 
-      for all paths
+      for all paths:
   
         randomly choose a direction for an adjacent cell
     
-        if adjacent cell has not yet been visited
+        if adjacent cell has not yet been visited,
     
           embark on the adjacent cell
       
-        else
+        else,
     
           choose another direction
       
-        but if all adjacent cells has been visited
+        but if all adjacent cells has been visited,
     
           backtrack to the last cell that has an unvisited adjacent cell
       
@@ -50,6 +54,6 @@ You are one move away from the treasure.
 ## class(es), with fields and methods
 
 
-## version*n* wish list
+## version *n* wish list
 
 
