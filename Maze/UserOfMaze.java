@@ -158,6 +158,10 @@ public class UserOfMaze {
 
         snapshot = new Maze( candidate);
 
+        for (int i = 0; i <= candidate.rankCount; i++) {
+          candidate.go(8);
+        }
+
         System.out.println(
                             "modified candidate with no explorer"
                           + System.lineSeparator()
@@ -165,6 +169,7 @@ public class UserOfMaze {
                           + "unchanged snapshot" + System.lineSeparator()
                           + snapshot + System.lineSeparator()
                           );
+
 
         /* Expecting...
               modified candidate with no explorer

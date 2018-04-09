@@ -31,7 +31,7 @@ public class Maze {
 
     private int[][] maze;
     private final static int MAX_RANKS = 64;
-    private int rankCount;  // number of ranks in a constructed Maze
+    public int rankCount;  // number of ranks in a constructed Maze
 
     private Vector explorerPosition;  // see Vector inner class, below
 
@@ -88,17 +88,18 @@ public class Maze {
     public Maze( Maze old) {
 
         // Copy the explorer's position (code by Holmes is asserted to work)
-        explorerPosition = new Vector( old.explorerPosition);
 
         maze = new int[ MAX_RANKS][];
 
-        for (int i = 0; i < old.maze.length; i++) {
-          maze[i] = new int[ old.maze[i].length];
+        for (int i = 0; i < old.rankCount; i++) {
+          maze[i] = new int[old.maze[i].length];
           for (int j = 0; j < old.maze[i].length; j++) {
             maze[i][j] = old.maze[i][j];
           }
         }
         rankCount = old.rankCount;
+
+        explorerPosition = old.explorerPosition;
 
         //throw new java.lang.RuntimeException(
             //"Write code to copy the maze[][] array and rankCount.");
