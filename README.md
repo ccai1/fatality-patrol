@@ -1,174 +1,60 @@
-# classes to support `MazeSolver`
+# maze project
+holmes apcs period 05
 
-Classes and their public members.
+## personnel
 
-## `Maze`
+cathy cai & jeffrey rusovskiy
 
-Represent a maze with an explorer in it.
+## statement of problem
 
-- `Maze(`*file name for maze*`, `*explorer position*`)` 
-   constructor: read a maze from a file and position an explorer in it.
+Return a boolean for the statement: "The maze is navigable, having a legal and continuous travel path that traverses from any start start to any treasure."
 
-- copy constructor 
+## recursive abstraction
 
-- `toString()`
+When asked to navigate a path, the recursive abstraction can navigate a path from its last turn. If there is a dead end, call on the recursive abstraction again.
 
-- named constants for the directions an explorer can move
+## base case
 
-- `go(`*direction*`)`: move the explorer one step
+You are one move away from the treasure.
 
-- named constants for the maze elements
+## algorithm psuedocodes
 
-- `explorerIsOnA()` returns the maze element in 
-the cell that the explorer currently occupies.
-If the explorer has taken a step outside the maze, 
-`explorerIsOnA` returns a wall element, as if there were a moat of wall elements
-around the specified maze. Returning a wall should allow
-the user-programmer's logic for wall elements
-to handle attempts by the explorer to leave the maze.
+#### algorithm psuedocode 2 a.m. version
 
-- `dropA(`*maze element*`)`:  Modify the maze to have a *maze element* in 
-the cell that the explorer currently occupies.
+    find the treasure
 
-#### "undoing" a modification to a `Maze`
-In general, a programmer using the `Maze` class
-cannot undo an explorer move by moving it in the opposite direction.
-Moving back will work for some specific situations, 
-but it fails when the original move takes the explorer outside the 
-maze. Since the explorer then has no position in the maze, it cannot be moved.
+#### algorithm psuedocode -1
 
-Instead, a user-programmer employs the restore-from-snapshot paradigm:
+    begin at designated startpoint
 
-0. Before a modification that might need undoing, take a snapshot of a maze 
-instance, using the `Maze` copy constructor. 
+      iterate through maze
+  
+    end at designated endpoint
 
-0. To undo the move, copy-construct another maze from the snapshot.
+#### algorithm psuedocode 0
 
-This make sense as long as you remember that a Java variable of a 
-reference type holds a **reference** to an instance of that type.
-For example, a variable of type `Maze` holds a reference to a `Maze` instance.
-A program can assign the variable a different reference.
-The variable then refers to a different instance.
-For example...
+    begin at designated startpoint
 
-```java
-Maze candidate = new Maze(...
-candidate.go(...  // Process the Maze that candidate refers to.
+      for all paths:
+  
+        randomly choose a direction for an adjacent cell
+    
+        if adjacent cell has not yet been visited,
+    
+          embark on the adjacent cell
+      
+        else,
+    
+          choose another direction
+      
+        but if all adjacent cells has been visited,
+    
+          backtrack to the last cell that has an unvisited adjacent cell
+      
+    end when no cells have an unvisited adjacent cell and treasure has not yet been reached (no solution)
 
-Maze snapshot = new Maze( candidate);
-
-candidate.go(...  /* Modify the Maze that candidate refers to 
-   without modifying the Maze that snapshot refers to. */
-
-candidate = new Maze( snapshot);  /* "Undo" modifications by
-   making candidate refer to an unmodified copy of the maze. */
-
-candidate.go(...  // Process the maze in its form before modification.
-```
-
-## `Displayer`
-
-Display a String of a few lines and pad them sufficiently
-so that they take up an entire shell window. Pause until the person running the
-program has assimilated the content.
-
-Repeated invocations of the Displayer
-with slightly-changed versions of the String will over-write previous displays, 
-resulting in an approximation of animation.
-
-## `UserOfMaze` 
-
-Used in
-[hw94](http://www.davidmholmes.net/Stuy/ap/hw.html#94) 
-to learn and test `Maze` via incremental development.
-
-Demo use of `Displayer`.
+## class(es), with fields and methods
 
 
-## implementation
+## version *n* wish list
 
-A single maze is represented different ways in differing contexts.
- This is common in programming. For another example, recall the board in
-[*n*-queens](https://github.com/stuyvesant-cs/libraryHolmes/tree/master/90_NQueensSolver),
-which was represented in memory by a 1-D array of file numbers, but represented
-in String form by a lines of `Q` and `_` characters.
-
-Mazes use a third form, too: a representation in a text file, read as input
-to the program.
-
-### for input, represent a maze in a text file
-- `0` means "treasure"
-- `*` means "stepping stone"
-- *space*, or anything else, means "wall"
-
-See samples in the [mazes](mazes/) subdirectory.
-
-### during program execution, represent a maze in memory
-
-The `Maze` class represents a maze and explorer inside the program.
-
-The user-programmer is expected to be able to use the `Maze` class
-without changes. 
-The user-programmer *can* modify their
-copy of this class, but my solution works with the current form.
-
-The `Maze` class contains an inner class called `Vector`, representing a 
-[displacement](https://en.wikipedia.org/wiki/Displacement_(vector))
-in the maze. 
-
-
-### for debugging, represent a maze in a text string
-
-`Maze.toString()` output resembles the input file. There are two differences:
-
-##### borders
-The `toString()` representation of a maze is bordered by lines,
-so that the user can notice spaces.
-
->For example, for maze whose input is
-```
-0** 
-```
-has a hard-to-see space at the end of the line, indicating a wall element.
-(Your browser will probably show the space if you select the text.)
-The border that `toString()` produces makes the space more obvious:
-```
-------
-|0** |
-------
-```
-
-##### explorer on maze element
-
-How can the output of `toString()` show that a cell contains both
-a maze element and the explorer?
-
-Answer: For such a cell, `toString()` shows a character that differs from
-the element's representation in the input file:
-
-- explorer on a stepping stone is shown as `e`, rather than `*`
-- explorer on a wall element is shown as `E`, rather than *space*
-- explorer on a stepping stone is shown as `!`, rather than `0`
-
-Using the maze above or example, starting an explorer in each of the cells
-left-to-right would cause `toString()` to produce...
-```
-------
-|!** |
-------
-
-------
-|0e* |
-------
-
-------
-|0*e |
-------
-
-------
-|0**E|
-------
-```
-
-An explorer that has stepped out of the maze has no location,
-and so is not shown.
