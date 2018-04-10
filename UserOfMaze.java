@@ -188,7 +188,7 @@ public class UserOfMaze {
           // + "to an unchanged copy of the maze.");
 
 
-       candidate = new Maze( snapshot);
+       candidate = snapshot;
         System.out.println(
                             "restored candidate, with an explorer"
                           + System.lineSeparator()
