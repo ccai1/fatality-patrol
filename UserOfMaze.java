@@ -158,7 +158,7 @@ public class UserOfMaze {
 
         snapshot = new Maze( candidate);
 
-        for (int i = 0; i <= candidate.rankCount; i++) {
+        for (int i = 0; i < candidate.rankCount; i++) {
           candidate.go(8);
         }
 

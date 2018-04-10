@@ -99,7 +99,7 @@ public class Maze {
         }
         rankCount = old.rankCount;
 
-        explorerPosition = old.explorerPosition;
+        explorerPosition = new Vector().add( old.explorerPosition.rank, old.explorerPosition.file);
 
         //throw new java.lang.RuntimeException(
             //"Write code to copy the maze[][] array and rankCount.");
