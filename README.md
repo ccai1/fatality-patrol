@@ -31,3 +31,8 @@ You are on the treasure or there are no more paths available.
 
 ## version *n* wish list
 
+
+## known bugs :(
+
+
+
