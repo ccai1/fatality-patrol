@@ -15,12 +15,12 @@ When asked to navigate a path, the recursive abstraction can navigate a path wit
 
 ## base case
 
-You are on the treasure or you are on the lava.
+You are on the treasure or there are no more paths available.
 
 ## algorithm psuedocode
 
     if "E" is on the treasure, return true
-    if "E" is in the lava, return false
+    if there are no more paths available, return false
     else if "E" is on a stepping stone
         for each direction
             move "E"
