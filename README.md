@@ -24,7 +24,7 @@ You are on the treasure or you are on the lava.
     else if "E" is on a stepping stone
         for each direction
             move "E"
-            recursive abstraction
+            invoke recursive abstraction
 
 ## class(es), with fields and methods
 
