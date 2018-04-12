@@ -3,7 +3,7 @@ holmes apcs period 05
 
 ## personnel
 
-cathy cai & jeffrey rusovskiy
+Cathy Cai & Jeffrey Rusovskiy
 
 ## statement of problem
 
@@ -32,7 +32,7 @@ You are on the treasure or there are no more paths available.
 ## version *n* wish list
 
 
-## known bugs :(
+## known bugs
 
 
 
