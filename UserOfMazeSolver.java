@@ -1,7 +1,6 @@
 /**
 
   test MazeSolver.
-  Specify number of ranks and number of files for the maze from command line.
 
 **/
 
