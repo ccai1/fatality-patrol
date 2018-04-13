@@ -15,24 +15,33 @@ When asked to navigate a path, the recursive abstraction can navigate a path wit
 
 ## base case
 
-You are on the treasure or there are no more paths available.
+You are on the treasure or you are on a wall.
 
 ## algorithm psuedocode
 
     if "E" is on the treasure, return true
-    if there are no more paths available, return false
-    else if "E" is on a stepping stone
+    if you are on a wall, return false
+    else
         for each direction
+            take snapshot
+            drop wall
             move "E"
             invoke recursive abstraction
+            set maze to snapshot
 
 ## class(es), with fields and methods
 
+Displayer
+Maze
+UserOfMaze
+MazeSolver
+UserOfMazeSolver
 
 ## version *n* wish list
 
+GUI for maze route
 
 ## known bugs
 
-
+When the explorer reaches a treasure or wall (base cases), its position could not incremented to reach the actual treasure/wall without causing a null pointer exception (in the Vector subclass in Maze and add method).
 
