@@ -227,7 +227,10 @@ public class Maze {
             if(    0 <= rank && rank < rankCount
                 && 0 <= file && file < maze[ rank].length
               )  return this;
-            else return null;  // outside maze
+            else {
+              //System.out.println("will produce warning...");
+              return null;  // outside maze
+            }
         }
 
 
