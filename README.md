@@ -32,9 +32,13 @@ You are on the treasure or you are on a wall.
 ## class(es), with fields and methods
 
 Displayer
+
 Maze
+
 UserOfMaze
+
 MazeSolver
+
 UserOfMazeSolver
 
 ## version *n* wish list
