@@ -1,24 +1,47 @@
 /**
 
-  Represent the set of solutions to a given maze.
-  Count two solutions as distinct even if they are rotations of each other.
+  Return a boolean for the statement:
+  "The maze is navigable, having a legal and continuous travel path that traverses from any start start to any treasure."
 
 **/
 
-import java.util.ArrayList;
-
 public class MazeSolver {
 
-  ArrayList< Maze> solutions;
-  Maze inProgress; // for finding the next solution
+  public Maze maze;
 
-  public static void main(String[] args) {
-
-    System.out.println( );
-
+  public MazeSolver(Maze maze) {
+    this.maze = maze;
   }
 
-  public MazeSolver() {
-    solution = new ArrayList<>();
+  public Boolean solve() {
+    if (maze.explorerIsOnA() == maze.TREASURE) {
+      //System.out.println("found treasure");
+      return true;
+    }
+    else if (maze.explorerIsOnA() == maze.WALL) {
+      return false;
+    }
+    else {
+      for (int direction = 1; direction <= 8; direction*=2) {
+        Maze snapshot = new Maze(maze);
+        //System.out.println("New direction: " + direction);
+        //System.out.println(direction + " " + snapshot.toString());
+        maze.dropA(maze.WALL);
+        maze.go(direction);
+        //System.out.println("recalling...");
+        if (solve()) {
+          //System.out.println(maze);
+
+          return true;
+        }
+        maze = snapshot;
+        //System.out.println("snapshot");
+      }
+    }
+    return false;
   }
+
+  public String toString() {
+    return String.valueOf(solve());
+   }
 }

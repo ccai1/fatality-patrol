@@ -11,18 +11,15 @@ public class UserOfMazeSolver {
      throws java.io.FileNotFoundException {
 
        System.out.println( );
+       System.out.println( "Maze Solution?");
 
-       inProgress = new Maze(fileName, rank, file);
-
-       oneTest(inProgress)
-
-     }
-
-  private static void oneTest(Maze solveMe)
-  {
-       System.out.println( solveMe.toString()
+       Maze maze = new Maze( args[0]
+                         , Integer.parseInt( args[1])
+                         , Integer.parseInt( args[2])
+                         );
+       System.out.println( maze.toString()
        + System.lineSeparator()
-       + new MazeSolver(solveMe)
+       + new MazeSolver(maze)
        + System.lineSeparator());
      }
 }
