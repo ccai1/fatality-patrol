@@ -52,4 +52,5 @@ When the explorer reaches a treasure or wall (base cases), its position could no
 ## v1
 
 Add clarifying comments to the classes, especially the MazeSolver algorithm.
+
 Implement the Displayer class like UserOfMaze in UserOfMazeSolver.
