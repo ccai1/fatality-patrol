@@ -28,10 +28,10 @@ public class UserOfMaze {
         //copyConstructTest( maze);
 
         // // test Displayer
-        //displayer = new Displayer( Integer.parseInt( commandLine[3]));
-        //displayerTest( maze);
+        displayer = new Displayer( Integer.parseInt( commandLine[3]));
+        displayerTest( maze);
 
-        snapshotDemo( maze);
+        //snapshotDemo( maze);
     }
 
 
@@ -134,17 +134,17 @@ public class UserOfMaze {
       Run by using the height of your shell window as a final argument, like...
           java UserOfMaze mazes/4cell_treasureWest.txt 0 3 25
      */
-    // private static void displayerTest( Maze m) {
-    //     int step = 0;
-    //
-    //     displayer.atTopOfWindow( m + "step " + step++);
-    //
-    //     // move past west edge, Displaying as we go
-    //     while( step < 5) {
-    //         m.go( Maze.WEST);
-    //         displayer.atTopOfWindow( m + "step " + step++);
-    //     }
-    // }
+    private static void displayerTest( Maze m) {
+        int step = 0;
+
+        displayer.atTopOfWindow( m + "step " + step++);
+
+        // move past west edge, Displaying as we go
+        while( step < 5) {
+            m.go( Maze.WEST);
+            displayer.atTopOfWindow( m + "step " + step++);
+        }
+    }
 
 
     /**
@@ -188,7 +188,7 @@ public class UserOfMaze {
           // + "to an unchanged copy of the maze.");
 
 
-       candidate = snapshot;
+       candidate = new Maze( snapshot);
         System.out.println(
                             "restored candidate, with an explorer"
                           + System.lineSeparator()
