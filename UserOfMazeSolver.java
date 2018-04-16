@@ -1,10 +1,7 @@
 /**
 
   test MazeSolver.
-<<<<<<< HEAD
-=======
   Specify filename and explorer position from command line.
->>>>>>> added comments + implemented displayer
 
 **/
 
