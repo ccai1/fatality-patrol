@@ -1,5 +1,5 @@
 # maze project
-holmes apcs period 05
+Holmes APCS Period 05
 
 ## personnel
 
