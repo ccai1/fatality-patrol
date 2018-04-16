@@ -48,3 +48,8 @@ GUI for maze route
 ## known bugs
 
 When the explorer reaches a treasure or wall (base cases), its position could not incremented to reach the actual treasure/wall without causing a null pointer exception (in the Vector subclass in Maze and add method).
+
+## v1
+
+Add clarifying comments to the classes, especially the MazeSolver algorithm.
+Implement the Displayer class like UserOfMaze in UserOfMazeSolver.
